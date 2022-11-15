@@ -12,6 +12,7 @@ node_modules
 # Optional REPL history
 .DS_Store
 .idea
+package-lock.json
 dist
 .env
 .env.deploy
