@@ -21,7 +21,7 @@ module.exports = {
       'pre-setup': 'rm -rf mesto',
       'pre-deploy-local': `scp ./.env* ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/source/backend`,
       'pre-deploy': 'cd ~/mesto/source/backend/ && npm i && npm run build',
-      'post-deploy': 'pm2 reload ecosystem.config.js',
+      'post-deploy': 'cd ~/mesto/source/backend/ && pm2 reload ecosystem.config.js',
     },
   },
 };
