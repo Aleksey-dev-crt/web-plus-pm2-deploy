@@ -16,7 +16,8 @@ module.exports = {
       ref: DEPLOY_REF,
       repo: DEPLOY_REPO,
       path: DEPLOY_PATH,
-      'post-deploy': 'cd ~/mesto/source/frontend/ && npm i && npm run build',
+      'pre-deploy': 'cd ~/mesto/source/frontend/ && npm i && npm run build',
+      'post-deploy': 'cd ~/mesto/source/backend/ && pm2 reload ecosystem.config.js',
     },
   },
 };
