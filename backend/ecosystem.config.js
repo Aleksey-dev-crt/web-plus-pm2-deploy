@@ -20,8 +20,8 @@ module.exports = {
       path: DEPLOY_PATH,
       'pre-setup': 'rm -rf mesto',
       'pre-deploy-local': `scp ./.env* ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/source/backend`,
-      'pre-deploy': 'cd ~/mesto/source/backend/ && npm i && npm run build',
-      'post-deploy': 'cd ~/mesto/source/backend/ && npm i mongoose && pm2 start',
+      'pre-deploy': 'cd ~/mesto/source/backend/ && rm -rf node_modules dist',
+      'post-deploy': 'cd ~/mesto/source/backend/ && npm i && npm run build && pm2 start',
     },
   },
 };
