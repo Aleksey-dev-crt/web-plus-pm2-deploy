@@ -1,4 +1,3 @@
-require('dotenv').config();
 require('dotenv').config({ path: '.env.deploy' });
 
 const {
@@ -7,8 +6,7 @@ const {
 
 module.exports = {
   apps: [{
-    name: 'mesto-backend',
-    script: './dist/app.js',
+    name: 'mesto-frontend',
   }],
 
   deploy: {
@@ -18,9 +16,7 @@ module.exports = {
       ref: DEPLOY_REF,
       repo: DEPLOY_REPO,
       path: DEPLOY_PATH,
-      'pre-setup': 'rm -rf mesto-backend',
-      'pre-deploy-local': `scp ./.env* ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/source/backend`,
-      'post-deploy': 'cd ~/mesto/source/backend/ && npm i && npm run build && npx pm2 start',
+      'post-deploy': 'cd ~/mesto/source/frontend/ && npm i && npm run build',
     },
   },
 };
