@@ -18,7 +18,7 @@ module.exports = {
       ref: DEPLOY_REF,
       repo: DEPLOY_REPO,
       path: DEPLOY_PATH,
-      'pre-setup': 'rm -rf mesto-backend',
+      'pre-setup': 'rm -rf mesto',
       'pre-deploy-local': `scp ./.env* ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/source/backend`,
       'post-deploy': 'cd ~/mesto/source/backend/ && npm i && npm run build && npx pm2 start',
     },
