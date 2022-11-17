@@ -1,5 +1,6 @@
 
 const getResponse = (res) => {
+  console.log('res', res.json())
     return res.ok ? res.json() : Promise.reject({status: res.status, message: res});
 }
 
