@@ -9,7 +9,7 @@ module.exports = {
   apps: [{
     name: 'mesto-backend',
     script: 'npm',
-    args: 'run app',
+    args: 'exec ./dist/app.js',
   }],
 
   deploy: {
