@@ -159,9 +159,8 @@ function App() {
         setEmail(email);
         history.push("/");
       })
-      .catch((err, res) => {
+      .catch((err) => {
         console.log('err', err);
-        console.log('res', res);
         setTooltipStatus("fail");
         setIsInfoToolTipOpen(true);
       });

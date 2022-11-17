@@ -1,6 +1,6 @@
 
 const getResponse = (res) => {
-    return res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`);
+    return res.ok ? res.json() : Promise.reject(`Ошибка: ${res}`);
 }
 
 class Api {
@@ -121,7 +121,6 @@ class Api {
       })
       .then(getResponse)
       .then((data) => {
-        console.log('data', data);
         this.setToken(data.token);
         localStorage.setItem('jwt', data.token)
         return data;
