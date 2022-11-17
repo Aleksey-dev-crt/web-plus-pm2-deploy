@@ -9,7 +9,9 @@ module.exports = {
   apps: [{
     name: 'mesto-backend',
     script: './dist/app.js',
+    args: 'start',
   }],
+  exec_mode: 'fork',
 
   deploy: {
     production: {
