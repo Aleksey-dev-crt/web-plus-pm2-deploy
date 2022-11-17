@@ -24,7 +24,7 @@ function App() {
   const [selectedCard, setSelectedCard] = React.useState(null);
   const [cards, setCards] = React.useState([]);
 
-  
+
   const [currentUser, setCurrentUser] = React.useState({});
 
   const [isInfoToolTipOpen, setIsInfoToolTipOpen] = React.useState(false);
@@ -61,7 +61,7 @@ function App() {
   }, [history]);
 
 
-  
+
   function handleEditProfileClick() {
     setIsEditProfilePopupOpen(true);
   }
@@ -160,21 +160,22 @@ function App() {
         history.push("/");
       })
       .catch((err) => {
+        console.log(err);
         setTooltipStatus("fail");
         setIsInfoToolTipOpen(true);
       });
   }
 
   function onSignOut() {
-    
+
     localStorage.removeItem("jwt");
     setIsLoggedIn(false);
-    
+
     history.push("/signin");
   }
 
   return (
-    
+
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page__content">
         <Header email={email} onSignOut={onSignOut} />
