@@ -1,6 +1,7 @@
 
-const getResponse = (res) => {
-  console.log('res', res.json().then(error => ({ error })))
+ const getResponse = async (res) => {
+
+  console.log('res', await res.json())
 
     return res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`);
 }
