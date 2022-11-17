@@ -14,7 +14,7 @@ function InfoTooltip({ isOpen, onClose, status, message }) {
             <div>
               <img className="popup__icon" src={icon} alt=""/>
               <p className="popup__status-message">{text}</p>
-              <p className="popup__error">{message}</p>
+              <span className="popup__error popup__error_visible">{message}</span>
             </div>
         </form>
       </div>
