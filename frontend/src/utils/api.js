@@ -1,6 +1,9 @@
 
 const getResponse = (res) => {
-    return res.ok ? res.json() : Promise.reject(`Ошибка: ${Promise.resolve(res.json())}`);
+   const err = res.json().then(data => {
+    return data
+  })
+    return res.ok ? res.json() : Promise.reject(`Ошибка: ${err}`);
 }
 
 class Api {
