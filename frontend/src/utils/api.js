@@ -1,6 +1,6 @@
 
 const getResponse = (res) => {
-    return res.ok ? res.json() : Promise.reject({status: res.status, message: res.message});
+    return res.ok ? res.json() : Promise.reject({status: res.status, message: res});
 }
 
 class Api {
