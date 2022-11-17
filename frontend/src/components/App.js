@@ -155,12 +155,13 @@ function App() {
     api
       .login(email, password)
       .then((res) => {
+        console.log('res', res)
         setIsLoggedIn(true);
         setEmail(email);
         history.push("/");
       })
       .catch((err) => {
-        console.log(err);
+        console.log('err', err);
         setTooltipStatus("fail");
         setIsInfoToolTipOpen(true);
       });
