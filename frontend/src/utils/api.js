@@ -1,9 +1,6 @@
 
- const getResponse = async (res) => {
-
-  console.log('res', await res.json())
-
-    return res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`);
+const getResponse = async (res) => {
+    return res.ok ? res.json() : Promise.reject(`Ошибка: ${await res.json()}`);
 }
 
 class Api {
