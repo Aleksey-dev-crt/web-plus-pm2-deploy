@@ -1,6 +1,6 @@
 
 const getResponse = (res) => {
-  console.log('res', Promise.resolve(res.json().then(error => ({ error }))))
+  console.log('res', res.json().then(error => ({ error })))
 
     return res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`);
 }
