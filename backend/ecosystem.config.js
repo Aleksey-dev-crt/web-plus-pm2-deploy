@@ -8,7 +8,7 @@ const {
 module.exports = {
   apps: [{
     name: 'mesto-backend',
-    script: 'node',
+    script: 'npm',
     args: './dist/app.js',
   }],
 
