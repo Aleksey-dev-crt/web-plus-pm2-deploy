@@ -8,9 +8,9 @@ const {
 module.exports = {
   apps: [{
     name: 'mesto-backend',
-    script: './dist/app.js',
+    script: 'npm',
+    args: 'start',
   }],
-  exec_mode: 'cluster',
 
   deploy: {
     production: {
