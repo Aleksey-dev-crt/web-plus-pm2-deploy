@@ -121,6 +121,7 @@ class Api {
       })
       .then(getResponse)
       .then((data) => {
+        console.log('data', data);
         this.setToken(data.token);
         localStorage.setItem('jwt', data.token)
         return data;
