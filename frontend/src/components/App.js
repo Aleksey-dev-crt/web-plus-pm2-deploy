@@ -161,7 +161,7 @@ function App() {
         history.push("/");
       })
       .catch((err) => {
-        console.log('err', err);
+        console.log('err', err.message);
         setTooltipStatus("fail");
         setIsInfoToolTipOpen(true);
       });
