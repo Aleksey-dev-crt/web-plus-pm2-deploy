@@ -1,6 +1,6 @@
 
 const getResponse = async (res) => {
-    return res.ok ? res.json() : Promise.reject(`Ошибка: ${await res.json()}`);
+    return res.ok ? res.json() : Promise.reject(await res.json());
 }
 
 class Api {
