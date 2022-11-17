@@ -29,6 +29,7 @@ function App() {
 
   const [isInfoToolTipOpen, setIsInfoToolTipOpen] = React.useState(false);
   const [tooltipStatus, setTooltipStatus] = React.useState("");
+  const [tooltipMessage, setTooltipMessage] = React.useState("");
 
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
   const [email, setEmail] = React.useState("");
@@ -162,6 +163,7 @@ function App() {
       .catch((err) => {
         console.log('err', err);
         setTooltipStatus("fail");
+        setTooltipMessage(err.message);
         setIsInfoToolTipOpen(true);
       });
   }
@@ -224,6 +226,7 @@ function App() {
           isOpen={isInfoToolTipOpen}
           onClose={closeAllPopups}
           status={tooltipStatus}
+          message={tooltipMessage}
         />
       </div>
     </CurrentUserContext.Provider>
